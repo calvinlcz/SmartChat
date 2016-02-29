@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-///test test I add it today
+///test test I add it today.....
 
 
 public class ChatAdapter extends ArrayAdapter<DataProvider>{
