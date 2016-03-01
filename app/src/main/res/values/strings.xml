@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">SmartChat</string>
     <string name="action_settings">Settings</string>
+    <string-array name = "contact_names">
+        <item>Hong Quan</item>
+        <item>Calvin</item>
+        <item>Zad</item>
+        <item>Xiuquan</item>
+        <item>Alfie</item>
+
+    </string-array>
+
 </resources>
