@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 adapter.add(new DataProvider(position, chat_text.getText().toString()));
-                position = !position;
+               // position = !position;
                 chat_text.setText("");
             }
         }
