@@ -1,5 +1,6 @@
 package com.example.kahheng.smartchat;
 
+import android.app.ActionBar;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,10 +26,20 @@ public class MainActivity extends Activity {
     boolean position = false;
     ChatAdapter adapter;
     Context ctx = this;
+    ActionBar actionBar;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        actionBar = getActionBar();
+        //actionBar.setTitle("");
         listview = (ListView) findViewById(R.id.chat_list_view);
         chat_text = (EditText) findViewById(R.id.chatTxt);
         SEND = (Button) findViewById(R.id.send_button);
@@ -51,5 +62,7 @@ public class MainActivity extends Activity {
             }
         }
         );
+
+
     }
 }
