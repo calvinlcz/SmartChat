@@ -1,6 +1,7 @@
 package com.example.kahheng.smartchat;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -31,6 +32,19 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.action_draw:
+                Intent newActivity = new Intent(MainActivity.this, DrawingActivity.class);
+                startActivity(newActivity);
+                break;
+
+        }
+
+
         return true;
     }
 
