@@ -25,7 +25,8 @@
         </activity>
 
         <activity
-            android:name=".DrawingActivity" />
+            android:name=".DrawingActivity"
+            android:parentActivityName="com.example.kahheng.smartchat.MainActivity"/>
         <activity
         android:name=".ContactListActivity" />
         <activity
