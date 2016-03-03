@@ -10,6 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.app.Activity;
 import android.widget.EditText;
@@ -27,7 +30,7 @@ public class MainActivity extends Activity {
     boolean position = false;
     ChatAdapter adapter;
     Context ctx = this;
-    ActionBar actionBar;
+    //ActionBar actionBar;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,13 +55,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        actionBar = getActionBar();
+        //actionBar = getActionBar();
         //actionBar.setTitle("");
         listview = (ListView) findViewById(R.id.chat_list_view);
         chat_text = (EditText) findViewById(R.id.chatTxt);
         SEND = (Button) findViewById(R.id.send_button);
         adapter = new ChatAdapter(ctx,R.layout.single_message_layout);
         listview.setAdapter(adapter);
+        registerForContextMenu(listview);
         listview.setTranscriptMode(AbsListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
         adapter.registerDataSetObserver(new DataSetObserver() {
             @Override
@@ -78,5 +82,12 @@ public class MainActivity extends Activity {
         );
 
 
+    }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
     }
 }
