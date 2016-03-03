@@ -24,7 +24,7 @@ public class BrushSizeChooserFragment extends DialogFragment {
     private SeekBar brushSizeSeekBar;
     private TextView minValue, maxValue, currentValue;
     private int currentBrushSize ;
-
+/////
     /**
      *
      * @param listener an implementation of the listener

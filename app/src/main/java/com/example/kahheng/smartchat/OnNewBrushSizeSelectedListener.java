@@ -7,3 +7,4 @@ public interface OnNewBrushSizeSelectedListener {
     void OnNewBrushSizeSelected(float newBrushSize);
 }
 
+/////
