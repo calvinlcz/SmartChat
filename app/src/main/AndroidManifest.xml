@@ -30,7 +30,7 @@
         android:name=".ContactListActivity" />
         <activity
             android:name=".MainActivity" />
-
+///
 
 
     </application>
